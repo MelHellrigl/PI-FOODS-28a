@@ -9,17 +9,6 @@
 }
 
 .bgImg2 {
-  /* background-color: white;
-  filter: alpha(opacity=70);
-
-  -moz-opacity: 0.7;
-  opacity: 0.7; */
-  /* background: rgb(255, 255, 255);
-  background: linear-gradient(
-    178deg,
-    rgba(255, 255, 255, 0.6951155462184874) 99%,
-    rgba(255, 255, 255, 0.44861694677871145) 99%
-  ); */
   background-size: cover;
   background-repeat: repeat;
   background-position-x: left;
@@ -27,49 +16,46 @@
   height: 100%;
   position: absolute;
 
-  background: rgba(230, 220, 215, 0.62);
-
-  /* background-color: rgba(128, 128, 128, 0.253);
-  position: absolute;
-  top: 60px;
-  bottom: 60px;
-  left: 60px;
-  right: 60px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 5px 5px 15px 5px #000000; */
-  /* background-color: #282c3415; */
-  /* -webkit-box-shadow: 5px 5px 15px 5px #000000;  */
+  /* background: rgba(230, 220, 215, 0.62); */
+  background: rgba(207, 186, 174, 0.62);
 }
 
 .bgImg3 {
   position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
   width: 450px;
   height: 450px;
-  margin-left: auto;
-  margin-top: auto;
-  /* left: 476px;
-  top: 133px; */
+  margin: auto;
+
   border-radius: 225px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   background: rgba(230, 220, 215, 0.62);
   border: 10px solid #ffffff;
+  box-shadow: 3px 3px 20px 3px #000000;
 }
 
 .bgImg3 h1 {
   position: relative;
-  font-family: "JosefinSlab-Regular";
-  src: url("../../Font/JosefinSlab-Regular.ttf");
+  font-family: "Roboto Slab", serif;
   text-align: center;
   font-weight: 300;
-  font-size: 60px;
-  line-height: 48px;
-  margin-top: 120px;
+  font-size: 90px;
+  line-height: 70px;
+  margin-top: 25px;
+  margin-bottom: 20px;
   color: #000000;
 }
 
 .bgImg3 button {
+  font-family: "DM Sans", sans-serif;
+  margin-top: 10px;
   background-color: transparent;
   align-items: center;
   margin-left: 120px;
@@ -84,7 +70,7 @@
 
 .bgImg3 button:hover {
   cursor: pointer;
-  transition: background-color 0.5s;
+  transition: background-color 0.9s;
   background-color: white;
   color: black;
   font-weight: bold;

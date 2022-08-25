@@ -8,13 +8,15 @@ export default function Paginado({ recipePage, recipes, paginado, page }) {
     pages.push(i);
   }
 
+  const prev = "<";
+  const next = ">";
+
   return (
     <div className={style.bgImg}>
-      <h1>Página: </h1>
       <button type="button" onClick={() => paginado(page === 1 ? page : page - 1)}>
-        Prev
+        {prev}
       </button>
-      <div>
+      <div className={style.btn}>
         {pages &&
           pages.map((n) => {
             return (
@@ -27,7 +29,7 @@ export default function Paginado({ recipePage, recipes, paginado, page }) {
           })}
       </div>
       <button type="button" onClick={() => paginado(page === pages.length ? page : page + 1)}>
-        Next
+        {next}
       </button>
     </div>
   );

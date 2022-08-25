@@ -1,6 +1,6 @@
 const axios = require("axios");
 require("dotenv").config();
-const { YOUR_API_KEY6 } = process.env;
+const { YOUR_API_KEY8 } = process.env;
 const { Recipe, Diet } = require("../db");
 
 //           ----------- API DATA -----------
@@ -10,7 +10,7 @@ const { Recipe, Diet } = require("../db");
 const infoAPI = async () => {
   try {
     const apiUrl = await axios.get(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${YOUR_API_KEY6}&addRecipeInformation=true&number=100`
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${YOUR_API_KEY8}&addRecipeInformation=true&number=100`
     );
     const apiInfo = await apiUrl.data.results.map((r) => {
       return {
@@ -106,13 +106,15 @@ const getRecipeById = async (req, res) => {
 
   try {
     if (id.includes("-")) {
-      const aaaa = Recipe.findByPk(id, { include: Diet });
-      aaaa.forEach((r) => {
-        return res.status(200).json(r);
-      });
+      // const aaaa = Recipe.findByPk(id, { include: Diet });
+      // aaaa.forEach((r) => {
+      //   return res.status(200).json(r);
+      // });
+      let aaaa = await infoDB(id);
+      return res.status(200).send(aaaa);
     } else {
       const apiResponse = await axios.get(
-        `https://api.spoonacular.com/recipes/${id}/information?apiKey=${YOUR_API_KEY6}`
+        `https://api.spoonacular.com/recipes/${id}/information?apiKey=${YOUR_API_KEY8}`
       );
       return res.status(200).json({
         title: apiResponse.data.title,

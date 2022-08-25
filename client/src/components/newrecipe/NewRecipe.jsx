@@ -14,8 +14,8 @@ function validation(input) {
   if (!input.summary) {
     errors.summary = "The summary is required.";
   }
-  if (!input.healthScore) {
-    errors.healthScore = "The healthScore is required.";
+  if (input.healthScore < 1 || input.healthScore > 100) {
+    errors.healthScore = "The score must be a number between 1 and 100.";
   }
   if (!input.img) {
     errors.img = "The image is required.";
@@ -49,6 +49,7 @@ export default function NewRecipe() {
   const handleChangeInput = (e) => {
     e.preventDefault();
     setInput((prevInput) => {
+      // de esta manera el componente muestra los cambios para poder ir validando
       const newInput = {
         ...prevInput,
         [e.target.name]: e.target.value,
@@ -102,6 +103,7 @@ export default function NewRecipe() {
 
   /* ---------------------------------- */
 
+  // FALTA SCORE??????
   return (
     <div>
       <Link to="/recipes">

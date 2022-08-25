@@ -8,7 +8,7 @@ export default function Landing() {
       <div className={style.bgImg2}>
         <div className={style.bgImg3}>
           <h1>HENRY FOOD</h1>
-          <br />
+
           <Link to="/recipes">
             <button>Welcome</button>
           </Link>
