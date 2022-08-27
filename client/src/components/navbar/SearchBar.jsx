@@ -9,15 +9,19 @@ export default function SearchBar({ paginado }) {
   const [title, setTitle] = useState("");
 
   const handleInputChange = (e) => {
-    e.preventDefault();
     setTitle(e.target.value);
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(getRecipesName(title));
-    paginado(1);
-    setTitle("");
+    if (title) {
+      e.preventDefault();
+      dispatch(getRecipesName(title));
+      paginado(1);
+      setTitle("");
+    } else {
+      e.preventDefault();
+      alert("ESA DIETA NO EXISTE PA");
+    }
   };
 
   return (

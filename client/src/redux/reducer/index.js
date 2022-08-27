@@ -15,7 +15,7 @@ const initialState = {
   recipe: [],
   recipesAll: [],
   diets: [],
-  recipeDetail: [],
+  recipeDetail: {},
 };
 
 const rootRouter = (state = initialState, action) => {

@@ -1,0 +1,90 @@
+.bgImg {
+  background-image: url("../../Image/ORFF0J0.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+
+.bg {
+  background-size: cover;
+  background-repeat: repeat;
+  width: 100%;
+  background: rgba(207, 186, 174, 0.62);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+
+  width: 99, 99%;
+  background: rgba(209, 196, 189, 0.69);
+  border: 1px solid #8f8e8e;
+  height: 50px;
+  top: 0px;
+}
+
+.nav button {
+  border-radius: 15px;
+  margin-left: 2px;
+  margin-top: 7px;
+  height: 35px;
+  width: 120px;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #8f8e8e;
+
+  font-family: "DM Sans", sans-serif;
+  background: rgba(209, 196, 189, 0.69);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav button:hover {
+  cursor: pointer;
+  transition: background-color 0.5s;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  border: 1px solid #313131;
+}
+
+.bgDetail {
+  background-color: rgba(128, 128, 128, 0.253);
+  display: flex;
+  flex-direction: column;
+
+  width: 1200px;
+  height: 500px;
+
+  border-radius: 20px;
+  text-align: justify;
+  box-shadow: 5px 5px 15px 5px #000000;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-left: 55px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.bgDetail2 {
+  background-color: rgba(128, 128, 128, 0.253);
+  display: flex;
+  flex-direction: column;
+
+  width: 1200px;
+  height: 1500px;
+
+  margin-top: 60px;
+  margin-bottom: 60px;
+  margin-left: 60px;
+  margin-right: 60px;
+  border-radius: 20px;
+  text-align: justify;
+  background-color: #282c3415;
+  box-shadow: 5px 5px 15px 5px #000000;
+}

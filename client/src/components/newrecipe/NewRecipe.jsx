@@ -11,15 +11,31 @@ function validation(input) {
   if (!input.title) {
     errors.title = "The title is required.";
   }
+  if (/^[a-zA-Z]+$/.test(input.title)) {
+    errors.title = "The title requires only letters";
+  }
+  if (input.title.length <= 2 || input.title.length >= 20) {
+    errors.title = "The title requires from 2 to 20 letters.";
+  }
+
   if (!input.summary) {
     errors.summary = "The summary is required.";
+  } else if (input.summary.length <= 2 || input.summary.length >= 200) {
+    errors.summary = "The title requires from 2 to 200 letters.";
   }
+
   if (input.healthScore < 1 || input.healthScore > 100) {
     errors.healthScore = "The score must be a number between 1 and 100.";
   }
-  if (!input.img) {
-    errors.img = "The image is required.";
+
+  if (
+    !/https?:\/\/(www.)?[-a-zA-Z0-9@:%.+~#=]{1,256}.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%+.~#?&//=]*)/.test(
+      input.img
+    )
+  ) {
+    errors.img = "Url incorrect.";
   }
+
   return errors;
 }
 
@@ -76,7 +92,7 @@ export default function NewRecipe() {
 
   const handleChangeSubmit = (e) => {
     e.preventDefault();
-    if (input.title && input.img && input.summary) {
+    if (input.title && input.img && input.summary && input.healthScore) {
       dispatch(createRecipe(input));
       alert("Recipe Created");
       setInput({
@@ -103,7 +119,6 @@ export default function NewRecipe() {
 
   /* ---------------------------------- */
 
-  // FALTA SCORE??????
   return (
     <div>
       <Link to="/recipes">
@@ -135,6 +150,8 @@ export default function NewRecipe() {
             name="healthScore"
             value={input.healthScore}
             onChange={handleChangeInput}
+            min={0}
+            max={100}
           />
           <br />
           {errors.healthScore && <span>{errors.healthScore}</span>}

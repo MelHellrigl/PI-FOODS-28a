@@ -31,6 +31,14 @@
   border: 1px solid #313131;
 }
 
+.bgImg button:focus {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  border: 1px solid #313131;
+}
+
 .btn {
   display: flex;
   justify-content: center;
