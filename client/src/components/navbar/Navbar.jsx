@@ -14,8 +14,8 @@ export default function Navbar({ paginado }) {
     paginado(1);
   }
   return (
-    <div className={style.App}>
-      <div className={style.App1}>
+    <div className={style.bg}>
+      <div className={style.bgHyC}>
         <Link to="/recipes">
           <button>Home</button>
         </Link>
@@ -24,7 +24,7 @@ export default function Navbar({ paginado }) {
         </Link>
         <button onClick={(e) => handleRecipes(e)}>Refreash</button>
       </div>
-      <div className={style.App2}>
+      <div className={style.bgSearch}>
         <SearchBar paginado={paginado} />
       </div>
     </div>

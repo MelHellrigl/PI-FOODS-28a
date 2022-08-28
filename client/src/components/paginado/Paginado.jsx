@@ -12,7 +12,7 @@ export default function Paginado({ recipePage, recipes, paginado, page }) {
   const next = ">";
 
   return (
-    <div className={style.bgImg}>
+    <div className={style.bg}>
       <button type="button" onClick={() => paginado(page === 1 ? page : page - 1)}>
         {prev}
       </button>

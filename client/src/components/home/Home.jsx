@@ -77,51 +77,40 @@ export default function Home() {
         </div>
         <div>
           <div className={style.filtroPaginado}>
-            <div>
-              <div className={style.sortFilter}>
-                <select onChange={handleSortTitle} defaultValue="default">
-                  <option value="default" disabled>
-                    Sort by Title
-                  </option>
-                  <option value="orderAZ">Recipes A-Z</option>
-                  <option value="orderZA">Recipes Z-A</option>
-                </select>
-                <select onChange={handleSortScore} defaultValue="default">
-                  <option value="default" disabled>
-                    Sort by Score
-                  </option>
-                  <option value="ascScore">Ascendente</option>
-                  <option value="descScore">Descendente</option>
-                </select>
-                <select onChange={handleFilter} defaultValue="default">
-                  <option value="default" disabled>
-                    Diets
-                  </option>
-                  <option value="all">All Diets</option>
-                  <option value="dairy free">Dairy Free</option>
-                  <option value="fodmap friendly">Fodmap Friendly</option>
-                  <option value="gluten free">Gluten Free</option>
-                  <option value="ketogenic">Ketogenic</option>
-                  <option value="lacto - vegetarian">Lacto Vegetarian</option>
-                  <option value="lacto ovo vegetarian">Lacto Ovo Vegetarian</option>
-                  <option value="low FODMAP">Low FODMAP</option>
-                  <option value="ovo - vegetarian">Ovo Vegetarian</option>
-                  <option value="paleolithic">Paleolithic</option>
-                  <option value="pescatarian">Pescatarian</option>
-                  <option value="primal">Primal</option>
-                  <option value="vegan">Vegan</option>
-                  <option value="vegetarian">Vegetarian</option>
-                  <option value="whole 30">Whole 30</option>
-                </select>
-              </div>
-              <div className={style.paginado}>
-                <Paginado
-                  recipePage={recipePage} //el nº de recetas por pagina
-                  recipes={recipes.length} //el total de recipes
-                  paginado={paginado} //setea el estado de page
-                  page={page} //la pagina
-                />
-              </div>
+            <div className={style.sortFilter}>
+              <select onChange={handleSortTitle} defaultValue="default">
+                <option value="orderAZ">Recipes A-Z</option>
+                <option value="orderZA">Recipes Z-A</option>
+              </select>
+              <select onChange={handleSortScore} defaultValue="default">
+                <option value="ascScore">Ascendente</option>
+                <option value="descScore">Descendente</option>
+              </select>
+              <select onChange={handleFilter} defaultValue="default">
+                <option value="all">All Diets</option>
+                <option value="dairy free">Dairy Free</option>
+                <option value="fodmap friendly">Fodmap Friendly</option>
+                <option value="gluten free">Gluten Free</option>
+                <option value="ketogenic">Ketogenic</option>
+                <option value="lacto - vegetarian">Lacto Vegetarian</option>
+                <option value="lacto ovo vegetarian">Lacto Ovo Vegetarian</option>
+                <option value="low FODMAP">Low FODMAP</option>
+                <option value="ovo - vegetarian">Ovo Vegetarian</option>
+                <option value="paleolithic">Paleolithic</option>
+                <option value="pescatarian">Pescatarian</option>
+                <option value="primal">Primal</option>
+                <option value="vegan">Vegan</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="whole 30">Whole 30</option>
+              </select>
+            </div>
+            <div className={style.paginado}>
+              <Paginado
+                recipePage={recipePage} //el nº de recetas por pagina
+                recipes={recipes.length} //el total de recipes
+                paginado={paginado} //setea el estado de page
+                page={page} //la pagina
+              />
             </div>
           </div>
           <div className={style.card}>
@@ -129,7 +118,13 @@ export default function Home() {
               {currentRecipes?.map((r) => {
                 return (
                   <div key={r.id}>
-                    <Card id={r.id} title={r.title} img={r.img} diets={r.diets} />
+                    <Card
+                      id={r.id}
+                      title={r.title}
+                      img={r.img}
+                      diets={r.diets}
+                      healthScore={r.healthScore}
+                    />
                   </div>
                 );
               })}

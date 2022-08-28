@@ -1,3 +1,4 @@
+/************* Imagen de fondo ***************/
 .bgImg {
   background-image: url("../../Image/ORFF0J0.jpg");
   background-size: cover;
@@ -8,6 +9,7 @@
   position: absolute;
 }
 
+/************* Color sobre imagen con transparencia ***************/
 .bgImg2 {
   background-size: cover;
   background-repeat: repeat;
@@ -20,6 +22,7 @@
   background: rgba(207, 186, 174, 0.62);
 }
 
+/************* Circulo ***************/
 .bgImg3 {
   position: absolute;
   top: 0px;
@@ -41,18 +44,20 @@
   box-shadow: 3px 3px 20px 3px #000000;
 }
 
+/************* Titulo ***************/
 .bgImg3 h1 {
   position: relative;
-  font-family: "Roboto Slab", serif;
+  font-family: "Caveat", cursive;
   text-align: center;
   font-weight: 300;
-  font-size: 90px;
+  font-size: 80px;
   line-height: 70px;
   margin-top: 25px;
   margin-bottom: 20px;
   color: #000000;
 }
 
+/************* Boton ***************/
 .bgImg3 button {
   font-family: "DM Sans", sans-serif;
   margin-top: 10px;

@@ -1,0 +1,240 @@
+.bgImg {
+  background-image: url("../../Image/ORFF0J0.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* overflow: scroll; */
+}
+
+.bg {
+  background-size: cover;
+  background-repeat: repeat;
+  width: 100%;
+  height: 100%;
+  background: rgba(207, 186, 174, 0.62);
+  overflow: scroll;
+}
+
+/************* NavBar ***************/
+.nav {
+  display: flex;
+  justify-content: space-between;
+
+  width: 99, 99%;
+  background: rgba(209, 196, 189, 0.69);
+  border: 1px solid #8f8e8e;
+  height: 50px;
+  top: 0px;
+}
+
+.nav button {
+  border-radius: 15px;
+  margin-left: 2px;
+  margin-top: 7px;
+  height: 35px;
+  width: 120px;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #8f8e8e;
+
+  font-family: "DM Sans", sans-serif;
+  background: rgba(209, 196, 189, 0.69);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav button:hover {
+  cursor: pointer;
+  transition: background-color 0.5s;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  border: 1px solid #313131;
+}
+
+/************* Posición Detalle ***************/
+.position {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+}
+
+/************* Fondo Detalle ***************/
+.bgDetail {
+  width: 600px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  text-align: center;
+  overflow: hidden;
+
+  background-color: rgba(209, 196, 189, 0.69);
+  border-radius: 20px;
+  box-shadow: 5px 5px 15px 5px #000000;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  padding: 20px 0px;
+}
+
+/************* Título ***************/
+.bgDetail h1 {
+  margin-top: 0px;
+  text-align: center;
+  font-family: "Caveat", cursive;
+}
+
+/************* Contenedor 1 de Label - Input  ***************/
+.contenido {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: rgba(128, 128, 128, 0.253);
+  width: 100%;
+  height: 100%;
+  padding: 10px 0px;
+}
+
+.contenido label {
+  font-family: "DM Sans", sans-serif;
+  display: flex;
+  width: 180px;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.contenido input {
+  font-family: "DM Sans", sans-serif;
+  display: flex;
+  width: 250px;
+  justify-content: flex-start;
+  font-weight: lighter;
+  border-radius: 15px;
+  border: 1px solid #8f8e8e;
+  height: 25px;
+}
+
+.contenido span {
+  display: flex;
+  justify-content: center;
+  font-family: "DM Sans", sans-serif;
+  font-weight: lighter;
+  color: red;
+}
+
+.contenido div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contenido textarea {
+  font-family: "DM Sans", sans-serif;
+  display: flex;
+  width: 250px;
+  justify-content: flex-start;
+  font-weight: lighter;
+  border-radius: 15px;
+  border: 1px solid #8f8e8e;
+  height: 60px;
+}
+
+.contenido select {
+  border-radius: 15px;
+  margin: 2px;
+  height: 35px;
+  width: 160px;
+  padding: 5px;
+  text-align: left;
+  border: 1px solid #8f8e8e;
+  font-weight: bold;
+  font-family: "DM Sans", sans-serif;
+}
+
+.contenido select:hover {
+  cursor: pointer;
+  transition: background-color 0.5s;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  border: 1px solid #313131;
+}
+
+.btnSubmit button {
+  border-radius: 15px;
+  height: 40px;
+  width: 300px;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #ffffff;
+  font-family: "DM Sans", sans-serif;
+  background: rgba(221, 211, 206, 0.69);
+  font-size: 20px;
+  font-weight: bold;
+}
+.btnSubmit button:hover {
+  cursor: pointer;
+  transition: background-color 0.5s;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  border: 1px solid #313131;
+}
+
+.dietas {
+  margin: 2px;
+  width: 400px;
+}
+
+.dietas div {
+  display: flex;
+  width: 300px;
+  height: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: space-between;
+  margin: 5px;
+}
+
+.dietas button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  height: 20px;
+  width: 20px;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #ffffff;
+  font-family: "DM Sans", sans-serif;
+  background: rgba(221, 211, 206, 0.69);
+  font-size: 18px;
+  margin: 5px;
+}
+
+.dietas button:hover {
+  cursor: pointer;
+  transition: background-color 0.5s;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  border: 1px solid #313131;
+}
+
+.dietas h4 {
+  margin: 0px;
+}
+
+.contenido form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}

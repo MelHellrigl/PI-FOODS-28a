@@ -13,19 +13,17 @@ export default function SearchBar({ paginado }) {
   };
 
   const handleSubmit = (e) => {
-    if (title) {
-      e.preventDefault();
+    try {
       dispatch(getRecipesName(title));
       paginado(1);
       setTitle("");
-    } else {
-      e.preventDefault();
-      alert("ESA DIETA NO EXISTE PA");
+    } catch (error) {
+      return error;
     }
   };
 
   return (
-    <div className={style.App3}>
+    <div className={style.bgIyBtn}>
       <input type="text" placeholder="Search..." onChange={handleInputChange} value={title} />
       <button type="submit" onClick={(e) => handleSubmit(e)}>
         Search

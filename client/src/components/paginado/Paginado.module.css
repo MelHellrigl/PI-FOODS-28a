@@ -1,4 +1,4 @@
-.bgImg {
+.bg {
   /* margin: auto;
   display: flex;
   justify-content: center;
@@ -9,7 +9,8 @@
   margin-bottom: 10px;
 }
 
-.bgImg button {
+/************* Botones ***************/
+.bg button {
   border-radius: 5px;
   margin: 2px;
   height: 25px;
@@ -22,7 +23,7 @@
   /* font-weight: bold; */
 }
 
-.bgImg button:hover {
+.bg button:hover {
   cursor: pointer;
   transition: background-color 0.5s;
   background-color: white;
@@ -31,13 +32,13 @@
   border: 1px solid #313131;
 }
 
-.bgImg button:focus {
+/* .bg button:active {
   cursor: pointer;
   background-color: white;
   color: black;
   font-weight: bold;
   border: 1px solid #313131;
-}
+} */
 
 .btn {
   display: flex;
@@ -46,3 +47,11 @@
   text-align: center;
   width: 100%;
 }
+
+/* .btn button:focus {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  border: 1px solid #313131;
+} */

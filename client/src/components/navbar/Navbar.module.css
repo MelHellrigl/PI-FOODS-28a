@@ -1,4 +1,4 @@
-.App {
+.bg {
   /* margin: auto;
   display: flex;
   flex-direction: row; */
@@ -10,13 +10,14 @@
   height: 100%;
 }
 
-.App1 {
+/************* Botones Home, Create & Refreash ***************/
+.bgHyC {
   padding: 5px;
   display: flex;
   justify-content: flex-start;
 }
 
-.App1 button {
+.bgHyC button {
   border-radius: 15px;
   margin: 2px;
   margin-right: 10px;
@@ -32,7 +33,7 @@
   font-weight: bold;
 }
 
-.App1 button:hover {
+.bgHyC button:hover {
   cursor: pointer;
   transition: background-color 0.5s;
   background-color: white;
@@ -41,18 +42,19 @@
   border: 1px solid #313131;
 }
 
-.App2 {
+/************* Search ***************/
+.bgSearch {
   margin: 2px;
   padding: 5px;
   display: flex;
   justify-content: flex-end;
 }
 
-.App3 input {
+/************* SearchBar - Input ***************/
+.bgIyBtn input {
   margin-right: 10px;
   border-radius: 20px;
 
-  margin-right: 10px;
   height: 23px;
   width: 180px;
   padding: 5px;
@@ -65,7 +67,7 @@
   /* font-weight: bold; */
 }
 
-.App3 input:hover {
+.bgIyBtn input:hover {
   cursor: pointer;
   transition: background-color 0.5s;
   background-color: white;
@@ -74,7 +76,7 @@
   border: 1px solid #313131;
 }
 
-.App3 input:focus {
+.bgIyBtn input:focus {
   cursor: pointer;
   background-color: white;
   color: black;
@@ -82,11 +84,11 @@
   border: 1px solid #313131;
 }
 
-.App3 button {
+/************* SearchBar - Button ***************/
+.bgIyBtn button {
   margin-right: 10px;
   border-radius: 20px;
   /* margin: 2px; */
-  margin-right: 10px;
   height: 35px;
   width: 120px;
   padding: 5px;
@@ -99,7 +101,7 @@
   font-weight: bold;
 }
 
-.App3 button:hover {
+.bgIyBtn button:hover {
   cursor: pointer;
   transition: background-color 0.5s;
   background-color: white;

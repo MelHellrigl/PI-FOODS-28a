@@ -3,6 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getDiets, createRecipe } from "../../redux/actions";
+import style from "./NewRecipe.module.css";
 
 /* ************ VALIDATION ************ */
 
@@ -11,16 +12,13 @@ function validation(input) {
   if (!input.title) {
     errors.title = "The title is required.";
   }
-  if (/^[a-zA-Z]+$/.test(input.title)) {
-    errors.title = "The title requires only letters";
-  }
   if (input.title.length <= 2 || input.title.length >= 20) {
     errors.title = "The title requires from 2 to 20 letters.";
   }
 
   if (!input.summary) {
     errors.summary = "The summary is required.";
-  } else if (input.summary.length <= 2 || input.summary.length >= 200) {
+  } else if (input.summary.length <= 2 || input.summary.length >= 300) {
     errors.summary = "The title requires from 2 to 200 letters.";
   }
 
@@ -120,90 +118,109 @@ export default function NewRecipe() {
   /* ---------------------------------- */
 
   return (
-    <div>
-      <Link to="/recipes">
-        <button>Home</button>
-      </Link>
-      <h1>Create New Recipe</h1>
-      <form onSubmit={(e) => handleChangeSubmit(e)}>
-        <div>
-          <label>Title: </label>
-          <input
-            type="text"
-            name="title"
-            value={input.title}
-            onChange={(e) => handleChangeInput(e)}
-          />
-          <br />
-          {errors.title && <span>{errors.title}</span>}
+    <div className={style.bgImg}>
+      <div className={style.bg}>
+        <div className={style.nav}>
+          <Link to="/recipes">
+            <button>Home</button>
+          </Link>
         </div>
-        <div>
-          <label>Image url: </label>
-          <input type="text" name="img" value={input.img} onChange={(e) => handleChangeInput(e)} />
-          <br />
-          {errors.img && <span>{errors.img}</span>}
-        </div>
-        <div>
-          <label>Health Score: </label>
-          <input
-            type="number"
-            name="healthScore"
-            value={input.healthScore}
-            onChange={handleChangeInput}
-            min={0}
-            max={100}
-          />
-          <br />
-          {errors.healthScore && <span>{errors.healthScore}</span>}
-        </div>
-        <div>
-          <label>Summary: </label>
-          <textarea
-            type="text"
-            name="summary"
-            value={input.summary}
-            onChange={(e) => handleChangeInput(e)}
-          />
-          <br />
-          {errors.summary && <span>{errors.summary}</span>}
-        </div>
-        <div>
-          <label>Analyzed Instructions: </label>
-          <textarea
-            type="text"
-            name="analyzedInstructions"
-            value={input.analyzedInstructions}
-            onChange={(e) => handleChangeInput(e)}
-          />
-        </div>
-        <div>
-          <label>Diets: </label>
-          <select onChange={(e) => handleChangeSelect(e)} defaultValue="default">
-            {diets &&
-              diets.map((d) => {
-                return (
-                  <option key={d.id} name="diets" value={d.name}>
-                    {d.name}
-                  </option>
-                );
-              })}
-          </select>
-          <ul>
-            {input.diets.map((e) => (
-              <div>
-                <li>{e}</li>
-                <button value={e} onClick={(e) => handleDelete(e)}>
-                  x
-                </button>
-              </div>
-            ))}
-          </ul>
-        </div>
+        <div className={style.position}>
+          <div className={style.bgDetail}>
+            <h1>New Recipe</h1>
+            <div className={style.contenido}>
+              <form onSubmit={(e) => handleChangeSubmit(e)}>
+                <div>
+                  <label>Title: </label>
+                  <input
+                    type="text"
+                    name="title"
+                    value={input.title}
+                    onChange={(e) => handleChangeInput(e)}
+                  />
+                  {errors.title && <span>{errors.title}</span>}
+                  <br />
+                </div>
+                <div>
+                  <label>Image url: </label>
+                  <input
+                    type="text"
+                    name="img"
+                    value={input.img}
+                    onChange={(e) => handleChangeInput(e)}
+                  />
+                  {errors.img && <span>{errors.img}</span>}
+                  <br />
+                </div>
+                <div>
+                  <label>Health Score: {`${input.healthScore}%`}</label>
+                  <input
+                    type="range"
+                    name="healthScore"
+                    value={input.healthScore}
+                    onChange={(e) => handleChangeInput(e)}
+                    min={0}
+                    max={100}
+                  />
+                  {errors.healthScore && <span>{errors.healthScore}</span>}
+                  <br />
+                </div>
+                <div>
+                  <label>Summary: </label>
+                  <textarea
+                    type="text"
+                    name="summary"
+                    value={input.summary}
+                    onChange={(e) => handleChangeInput(e)}
+                  />
+                  {errors.summary && <span>{errors.summary}</span>}
+                  <br />
+                </div>
+                <div>
+                  <label>Instructions: </label>
+                  <textarea
+                    type="text"
+                    name="analyzedInstructions"
+                    value={input.analyzedInstructions}
+                    onChange={(e) => handleChangeInput(e)}
+                  />
+                  <br />
+                </div>
+                <div>
+                  <label>Diets: </label>
+                  <select onChange={(e) => handleChangeSelect(e)} defaultValue="default">
+                    {diets &&
+                      diets.map((d) => {
+                        return (
+                          <option key={d.id} name="diets" value={d.name}>
+                            {d.name}
+                          </option>
+                        );
+                      })}
+                  </select>
+                  <div className={style.dietas}>
+                    <div>
+                      {input.diets.map((e) => (
+                        <div>
+                          <button value={e} onClick={(e) => handleDelete(e)}>
+                            x
+                          </button>
+                          <h4>{e}</h4>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <br />
+                </div>
 
-        <div>
-          <button type="submit">Create Recipe</button>
+                <div className={style.btnSubmit}>
+                  <button type="submit">Create</button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-      </form>
+      </div>
     </div>
   );
 }
