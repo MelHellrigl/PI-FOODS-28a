@@ -13,13 +13,9 @@ export default function SearchBar({ paginado }) {
   };
 
   const handleSubmit = (e) => {
-    try {
-      dispatch(getRecipesName(title));
-      paginado(1);
-      setTitle("");
-    } catch (error) {
-      return error;
-    }
+    dispatch(getRecipesName(title));
+    paginado(1);
+    setTitle("");
   };
 
   return (

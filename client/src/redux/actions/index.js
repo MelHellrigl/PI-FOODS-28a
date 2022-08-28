@@ -34,8 +34,12 @@ export function getRecipesId(id) {
 
 export function getRecipesName(name) {
   return async function (dispatch) {
-    const recipeName = await axios(`http://localhost:3001/recipes?name=${name}`);
-    return dispatch({ type: GET_RECIPES_NAME, payload: recipeName.data });
+    try {
+      const recipeName = await axios(`http://localhost:3001/recipes?name=${name}`);
+      return dispatch({ type: GET_RECIPES_NAME, payload: recipeName.data });
+    } catch (error) {
+      alert("The Recipe not exist, but you can Create.");
+    }
   };
 }
 
