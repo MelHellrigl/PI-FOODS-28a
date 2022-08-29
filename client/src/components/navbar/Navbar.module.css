@@ -1,18 +1,14 @@
 .bg {
-  /* margin: auto;
-  display: flex;
-  flex-direction: row; */
   margin: auto;
   display: flex;
   justify-content: space-between;
-
   width: 100%;
   height: 100%;
 }
 
 /************* Botones Home, Create & Refreash ***************/
 .bgHyC {
-  padding: 5px;
+  padding: 3px;
   display: flex;
   justify-content: flex-start;
 }
@@ -20,15 +16,18 @@
 .bgHyC button {
   border-radius: 15px;
   margin: 2px;
+  margin-top: 5px;
   margin-right: 10px;
+  margin-left: 10px;
   height: 35px;
-  width: 120px;
+  width: 100px;
   padding: 5px;
   text-align: center;
   border: 1px solid #8f8e8e;
 
   font-family: "DM Sans", sans-serif;
-  background: rgba(209, 196, 189, 0.69);
+  /* background: rgba(209, 196, 189, 0.69); */
+  background: rgba(178, 165, 157, 0.69);
   font-size: 18px;
   font-weight: bold;
 }
@@ -42,6 +41,54 @@
   border: 1px solid #313131;
 }
 
+.bgHyC img {
+  border-radius: 15px;
+
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 45px;
+  width: 60px;
+  /* background: rgba(209, 196, 189, 0.69); */
+}
+
+.bgHyC img:hover {
+  cursor: pointer;
+  /* transition: background-color 0.5s;
+  background-color: rgba(128, 128, 128, 0.253); */
+  /* color: black;
+  font-weight: bold;
+  border: 1px solid #313131; */
+}
+
+.refreash {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-right: 10px;
+  height: 35px;
+  width: 35px;
+  margin: 2px;
+  padding: 2px;
+  border: 1px solid #8f8e8e;
+  /* background: rgba(209, 196, 189, 0.69); */
+  background: rgba(178, 165, 157, 0.69);
+}
+
+.refreash img {
+  height: 30px;
+  width: 30px;
+  margin: 0px;
+  padding: 12px;
+}
+
+.refreash:hover {
+  cursor: pointer;
+  transition: background-color 0.5s;
+  background-color: white;
+  border: 1px solid #313131;
+}
+
 /************* Search ***************/
 .bgSearch {
   margin: 2px;
@@ -51,6 +98,14 @@
 }
 
 /************* SearchBar - Input ***************/
+.bgIyBtn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
 .bgIyBtn input {
   margin-right: 10px;
   border-radius: 20px;
@@ -62,7 +117,8 @@
   border: 1px solid #8f8e8e;
 
   font-family: "DM Sans", sans-serif;
-  background: rgba(209, 196, 189, 0.69);
+  /* background: rgba(209, 196, 189, 0.69); */
+  background: rgba(178, 165, 157, 0.69);
   font-size: 15px;
   /* font-weight: bold; */
 }
@@ -85,27 +141,32 @@
 }
 
 /************* SearchBar - Button ***************/
-.bgIyBtn button {
-  margin-right: 10px;
-  border-radius: 20px;
-  /* margin: 2px; */
-  height: 35px;
-  width: 120px;
-  padding: 5px;
-  text-align: center;
-  border: 1px solid #8f8e8e;
 
-  font-family: "DM Sans", sans-serif;
-  background: rgba(209, 196, 189, 0.69);
-  font-size: 18px;
-  font-weight: bold;
+.bgIyBtn div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-right: 10px;
+  height: 35px;
+  width: 35px;
+  margin: 2px;
+  padding: 2px;
+  border: 1px solid #8f8e8e;
+  /* background: rgba(209, 196, 189, 0.69); */
+  background: rgba(178, 165, 157, 0.69);
 }
 
-.bgIyBtn button:hover {
+.bgIyBtn img {
+  height: 30px;
+  width: 30px;
+  margin: 0px;
+  padding: 12px;
+}
+
+.bgIyBtn div:hover {
   cursor: pointer;
   transition: background-color 0.5s;
   background-color: white;
-  color: black;
-  font-weight: bold;
   border: 1px solid #313131;
 }

@@ -10,6 +10,8 @@ export const ORDER_ZA = "ORDER_ZA";
 export const ORDER_SCORE_ASC = "ORDER_SCORE_ASC";
 export const ORDER_SCORE_DESC = "ORDER_SCORE_DESC";
 export const FILTER_DIETS = "FILTER_DIETS";
+export const CLEAR = "CLEAR";
+export const LOADING = "LOADING";
 
 export function getRecipes() {
   return async function (dispatch) {
@@ -68,4 +70,14 @@ export function orderScoreDesc() {
 
 export function filterDiets(payload) {
   return { type: FILTER_DIETS, payload };
+}
+
+export function clearDetail(payload) {
+  return { type: CLEAR, payload };
+}
+
+export function loadingAction(payload) {
+  return (dispatch) => {
+    dispatch({ type: LOADING, payload });
+  };
 }

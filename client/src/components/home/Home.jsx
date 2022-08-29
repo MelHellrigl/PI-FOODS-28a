@@ -8,6 +8,7 @@ import {
   orderScoreAsc,
   orderScoreDesc,
   filterDiets,
+  loadingAction,
   // getDiets,
 } from "../../redux/actions";
 //import { Link } from "react-router-dom";
@@ -15,13 +16,18 @@ import Card from "../card/Card";
 import Navbar from "../navbar/Navbar";
 import Paginado from "../paginado/Paginado";
 import style from "./Home.module.css";
+import Gif from "../../Image/1484.gif";
 
 export default function Home() {
   const dispatch = useDispatch();
   const recipes = useSelector((state) => state.recipe);
+  const loading = useSelector((state) => state.loading);
 
   useEffect(() => {
     dispatch(getRecipes());
+    setTimeout(() => {
+      dispatch(loadingAction(false));
+    }, 3000);
   }, [dispatch]);
 
   /* ************ PAGINADO ************ */
@@ -79,10 +85,12 @@ export default function Home() {
           <div className={style.filtroPaginado}>
             <div className={style.sortFilter}>
               <select onChange={handleSortTitle} defaultValue="default">
+                <option default>Sort Title</option>
                 <option value="orderAZ">Recipes A-Z</option>
                 <option value="orderZA">Recipes Z-A</option>
               </select>
               <select onChange={handleSortScore} defaultValue="default">
+                <option default>Sort Score</option>
                 <option value="ascScore">Ascendente</option>
                 <option value="descScore">Descendente</option>
               </select>
@@ -114,21 +122,27 @@ export default function Home() {
             </div>
           </div>
           <div className={style.card}>
-            <div className={style.card1}>
-              {currentRecipes?.map((r) => {
-                return (
-                  <div key={r.id}>
-                    <Card
-                      id={r.id}
-                      title={r.title}
-                      img={r.img}
-                      diets={r.diets}
-                      healthScore={r.healthScore}
-                    />
-                  </div>
-                );
-              })}
-            </div>
+            {loading ? (
+              <div className={style.gif}>
+                <img src={Gif} alt="Loading" />
+              </div>
+            ) : (
+              <div className={style.card1}>
+                {currentRecipes?.map((r) => {
+                  return (
+                    <div key={r.id}>
+                      <Card
+                        id={r.id}
+                        title={r.title}
+                        img={r.img}
+                        diets={r.diets}
+                        healthScore={r.healthScore}
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+            )}
           </div>
         </div>
       </div>

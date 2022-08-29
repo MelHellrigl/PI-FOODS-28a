@@ -1,10 +1,11 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
-import { getRecipesId } from "../../redux/actions";
+import { getRecipesId, clearDetail } from "../../redux/actions";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import imgNotAvailable from "../../Image/Image_not_available.png";
 import style from "./CardDetail.module.css";
+import Logo from "../../Image/natural-1281596-removebg-preview (1).png";
 
 export default function CardDetail() {
   const dispatch = useDispatch();
@@ -15,15 +16,24 @@ export default function CardDetail() {
 
   useEffect(() => {
     dispatch(getRecipesId(id));
+    return () => {
+      // esto limpia el componente de los detalles anteriores que se hayan cargado
+      dispatch(clearDetail([]));
+    };
   }, [dispatch, id]);
 
   return (
     <div key={id} className={style.bgImg}>
       <div className={style.bg}>
         <div className={style.nav}>
-          <Link to="/recipes">
-            <button>Home</button>
-          </Link>
+          <div>
+            <Link to="/">
+              <img src={Logo} alt="Logo" />
+            </Link>
+            <Link to="/recipes">
+              <button>Back</button>
+            </Link>
+          </div>
         </div>
         <div className={style.position}>
           <div className={style.bgDetail}>

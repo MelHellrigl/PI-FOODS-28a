@@ -9,6 +9,8 @@ import {
   ORDER_SCORE_ASC,
   ORDER_SCORE_DESC,
   FILTER_DIETS,
+  CLEAR,
+  LOADING,
 } from "../actions";
 
 const initialState = {
@@ -16,6 +18,7 @@ const initialState = {
   recipesAll: [],
   diets: [],
   recipeDetail: {},
+  loading: true,
 };
 
 const rootRouter = (state = initialState, action) => {
@@ -99,6 +102,17 @@ const rootRouter = (state = initialState, action) => {
         ...state,
         recipe: dietFilter,
       };
+    case CLEAR:
+      return {
+        ...state,
+        recipeDetail: action.payload,
+      };
+    case LOADING: {
+      return {
+        ...state,
+        loading: action.payload,
+      };
+    }
     default:
       return state;
   }

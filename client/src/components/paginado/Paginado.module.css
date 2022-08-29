@@ -18,7 +18,8 @@
   border: 1px solid black;
   text-align: center;
   font-family: "DM Sans", sans-serif;
-  background: rgba(209, 196, 189, 0.69);
+  /* background: rgba(209, 196, 189, 0.69); */
+  background: rgba(178, 165, 157, 0.69);
   font-size: 18px;
   /* font-weight: bold; */
 }

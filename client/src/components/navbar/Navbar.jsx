@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import style from "./Navbar.module.css";
 import { useDispatch } from "react-redux";
-import { getRecipes } from "../../redux/actions";
+import { getRecipes, loadingAction } from "../../redux/actions";
+import Logo from "../../Image/natural-1281596-removebg-preview (1).png";
+import Refreash from "../../Image/redo__1_-removebg-preview.png";
 
 export default function Navbar({ paginado }) {
   const dispatch = useDispatch();
@@ -12,17 +14,25 @@ export default function Navbar({ paginado }) {
     e.preventDefault();
     dispatch(getRecipes());
     paginado(1);
+    dispatch(loadingAction(true));
+    setTimeout(() => {
+      dispatch(loadingAction(false));
+    }, 3000);
   }
+
   return (
     <div className={style.bg}>
       <div className={style.bgHyC}>
-        <Link to="/recipes">
-          <button>Home</button>
+        <Link to="/">
+          <img src={Logo} alt="Logo" />
+          {/* <button>Home</button> */}
         </Link>
+        <div className={style.refreash}>
+          <img src={Refreash} alt="Refreash" onClick={(e) => handleRecipes(e)} />
+        </div>
         <Link to="/createRecipe">
           <button>Create</button>
         </Link>
-        <button onClick={(e) => handleRecipes(e)}>Refreash</button>
       </div>
       <div className={style.bgSearch}>
         <SearchBar paginado={paginado} />
