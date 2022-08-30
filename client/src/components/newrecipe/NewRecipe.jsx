@@ -83,10 +83,11 @@ export default function NewRecipe() {
 
   const handleChangeSelect = (e) => {
     e.preventDefault();
-    setInput({
-      ...input,
-      diets: [...input.diets, e.target.value],
-    });
+    if (!input.diets.includes(e.target.value))
+      return setInput({
+        ...input,
+        diets: [...input.diets, e.target.value],
+      });
     e.target.value = "default";
   };
 

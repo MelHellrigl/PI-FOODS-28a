@@ -10,9 +10,7 @@ import Logo from "../../Image/natural-1281596-removebg-preview (1).png";
 export default function CardDetail() {
   const dispatch = useDispatch();
   const recipeDetail = useSelector((state) => state.recipeDetail);
-  console.log(recipeDetail);
   const { id } = useParams(); //esto permite ingresar a los parámetros de la ruta actual
-  console.log(id);
 
   useEffect(() => {
     dispatch(getRecipesId(id));
