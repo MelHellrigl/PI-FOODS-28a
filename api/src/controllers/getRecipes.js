@@ -1,6 +1,6 @@
 const axios = require("axios");
 require("dotenv").config();
-const { YOUR_API_KEY1 } = process.env;
+const { YOUR_API_KEY2 } = process.env;
 const { Recipe, Diet } = require("../db");
 
 //           ----------- API DATA -----------
@@ -10,7 +10,7 @@ const { Recipe, Diet } = require("../db");
 const infoAPI = async () => {
   try {
     const apiUrl = await axios.get(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${YOUR_API_KEY1}&addRecipeInformation=true&number=100`
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${YOUR_API_KEY2}&addRecipeInformation=true&number=100`
     );
     const apiInfo = await apiUrl.data.results.map((r) => {
       return {
@@ -110,7 +110,7 @@ const getRecipeById = async (req, res) => {
       return res.status(200).send(aaaa);
     } else {
       const apiResponse = await axios.get(
-        `https://api.spoonacular.com/recipes/${id}/information?apiKey=${YOUR_API_KEY1}`
+        `https://api.spoonacular.com/recipes/${id}/information?apiKey=${YOUR_API_KEY2}`
       );
       return res.status(200).json({
         title: apiResponse.data.title,
@@ -151,37 +151,4 @@ const createRecipe = async (req, res) => {
   }
 };
 
-// const deleteRecipe = async (req, res) => {
-//   const id = req.query.idDelete;
-
-//   if (id.includes("-")) {
-//     Recipe.destroy({ where: { id: id } });
-//     res.status(200).send("Recipe delete");
-//   } else {
-//     res.status(404).send("Solo se eliminan recetas creadas");
-//   }
-// };
-
-// const editRecipe = async (req, res) => {
-//   const id = req.query.idEdit;
-//   const { title, img, diets, summary, healthScore, analyzedInstructions } = req.body;
-
-//   if (id.includes("-")) {
-//     Recipe.update(
-//       {
-//         title,
-//         img,
-//         summary,
-//         healthScore,
-//         analyzedInstructions,
-//         diets,
-//       },
-//       { where: { id: id } }
-//     );
-//     res.status(200).send("Recipe editado");
-//   } else {
-//     res.status(404).send("No puede editar una receta que no creaste");
-//   }
-// };
-
-module.exports = { getRecipes, getRecipeById, createRecipe /*deleteRecipe, editRecipe */ };
+module.exports = { getRecipes, getRecipeById, createRecipe };

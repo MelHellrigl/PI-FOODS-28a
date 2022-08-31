@@ -18,16 +18,15 @@ export default function Paginado({ recipePage, recipes, paginado, page }) {
         {prev}
       </button>
       <div className={style.btn}>
-        {pages &&
-          pages.map((n) => {
-            return (
-              <div key={n}>
-                <button type="button" onClick={() => paginado(n)}>
-                  {page === n ? "*" : n}
-                </button>
-              </div>
-            );
-          })}
+        {pages?.map((n) => {
+          return (
+            <div key={n}>
+              <button type="button" onClick={() => paginado(n)}>
+                {page === n ? "*" : n}
+              </button>
+            </div>
+          );
+        })}
       </div>
       <button type="button" onClick={() => paginado(page === pages.length ? page : page + 1)}>
         {next}

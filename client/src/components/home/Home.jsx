@@ -71,7 +71,7 @@ export default function Home() {
     setPage(1);
   };
 
-  /* ---------------------------------- */
+  /* ---------------- RENDER ------------------ */
 
   return (
     <div className={style.img}>

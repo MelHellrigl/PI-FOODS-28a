@@ -34,6 +34,7 @@ export default function Navbar({ paginado }) {
           <button>Create</button>
         </Link>
       </div>
+
       <div className={style.bgSearch}>
         <SearchBar paginado={paginado} />
       </div>

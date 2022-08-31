@@ -11,7 +11,6 @@ import {
   FILTER_DIETS,
   CLEAR,
   LOADING,
-  // DELETE,
 } from "../actions";
 
 const initialState = {
@@ -113,14 +112,6 @@ const rootRouter = (state = initialState, action) => {
         ...state,
         loading: action.payload,
       };
-    // case DELETE:
-    //   return {
-    //     ...state,
-    //   };
-    // case EDIT:
-    //   return {
-    //     ...state,
-    //   };
     default:
       return state;
   }

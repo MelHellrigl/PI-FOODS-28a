@@ -76,12 +76,6 @@ export default function NewRecipe() {
       setErrors(validations);
       return newInput;
     });
-    // setErrors(
-    //   validation({
-    //     ...input,
-    //     [e.target.name]: e.target.value,
-    //   })
-    // );
   };
 
   const handleChangeSelect = (e) => {
@@ -120,7 +114,7 @@ export default function NewRecipe() {
     });
   };
 
-  /* ---------------------------------- */
+  /* ---------------- RENDER ------------------ */
 
   return (
     <div className={style.bgImg}>
