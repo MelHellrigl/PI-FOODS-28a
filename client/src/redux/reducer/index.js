@@ -12,7 +12,6 @@ import {
   CLEAR,
   LOADING,
   // DELETE,
-  // EDIT,
 } from "../actions";
 
 const initialState = {

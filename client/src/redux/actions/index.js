@@ -13,21 +13,51 @@ export const FILTER_DIETS = "FILTER_DIETS";
 export const CLEAR = "CLEAR";
 export const LOADING = "LOADING";
 // export const DELETE = "DELETE";
-// export const EDIT = "EDIT";
 
+/* ************ PROMESAS ************ */
 export function getRecipes() {
-  return async function (dispatch) {
-    const recipes = await axios("http://localhost:3001/recipes");
-    return dispatch({ type: GET_RECIPES, payload: recipes.data });
+  return (dispatch) => {
+    axios
+      .get("http://localhost:3001/recipes")
+      .then((response) => {
+        dispatch({
+          type: GET_RECIPES,
+          payload: response.data,
+        });
+      })
+      .catch((error) => {
+        throw new Error(error);
+      });
   };
 }
 
 export function getDiets() {
-  return async function (dispatch) {
-    const diets = await axios("http://localhost:3001/diets");
-    return dispatch({ type: GET_DIETS, payload: diets.data });
+  return (dispatch) => {
+    axios
+      .get("http://localhost:3001/diets")
+      .then((response) => {
+        dispatch({ type: GET_DIETS, payload: response.data });
+      })
+      .catch((error) => {
+        throw new Error(error);
+      });
   };
 }
+
+export function createRecipe(value) {
+  return (dispatch) => {
+    axios
+      .post("http://localhost:3001/recipes", value)
+      .then((response) => {
+        dispatch({ type: CREATE_RECIPE, payload: response.value });
+      })
+      .catch((error) => {
+        throw new Error(error);
+      });
+  };
+}
+
+/* ************ ASYNC AWAIT ************ */
 
 export function getRecipesId(id) {
   return async function (dispatch) {
@@ -47,12 +77,7 @@ export function getRecipesName(name) {
   };
 }
 
-export function createRecipe(value) {
-  return async function (dispatch) {
-    const createRecipe = await axios.post("http://localhost:3001/recipes", value);
-    return dispatch({ type: CREATE_RECIPE, payload: createRecipe.value });
-  };
-}
+/* ************ FILTROS & ORDENAMIENTOS ************ */
 
 export function orderByAZ() {
   return { type: ORDER_AZ };

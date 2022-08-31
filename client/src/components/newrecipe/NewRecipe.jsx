@@ -13,6 +13,9 @@ function validation(input) {
   if (!input.title) {
     errors.title = "The title is required.";
   }
+  if (!/^[a-zA-Z ]+$/.test(input.title)) {
+    errors.title = "The title requires letters";
+  }
   if (input.title.length <= 2 || input.title.length >= 20) {
     errors.title = "The title requires from 2 to 20 letters.";
   }
