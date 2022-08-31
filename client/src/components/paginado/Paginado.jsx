@@ -5,6 +5,7 @@ export default function Paginado({ recipePage, recipes, paginado, page }) {
   const pages = [];
 
   for (let i = 1; i <= Math.ceil(recipes / recipePage); i++) {
+    // devuelve el entero mayor o igual más próximo a un número dado.
     pages.push(i);
   }
 

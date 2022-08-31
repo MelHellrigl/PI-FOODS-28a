@@ -9,9 +9,7 @@ import {
   orderScoreDesc,
   filterDiets,
   loadingAction,
-  // getDiets,
 } from "../../redux/actions";
-//import { Link } from "react-router-dom";
 import Card from "../card/Card";
 import Navbar from "../navbar/Navbar";
 import Paginado from "../paginado/Paginado";
@@ -42,15 +40,15 @@ export default function Home() {
   };
 
   /* ************ ORDENAMIENTO ************ */
-  const [, /*refreshState*/ setRefreshState] = useState(false);
+  const [refreshState, setRefreshState] = useState(false);
 
   const handleSortTitle = (e) => {
     if (e.target.value === "orderAZ") {
-      dispatch(orderByAZ(e.target.value));
+      dispatch(orderByAZ(refreshState));
       setRefreshState(true);
       setPage(1);
     } else if (e.target.value === "orderZA") {
-      dispatch(orderByZA(e.target.value));
+      dispatch(orderByZA(refreshState));
       setRefreshState((prevState) => !prevState);
       setPage(1);
     }
@@ -58,11 +56,11 @@ export default function Home() {
 
   const handleSortScore = (e) => {
     if (e.target.value === "ascScore") {
-      dispatch(orderScoreAsc());
+      dispatch(orderScoreAsc(refreshState));
       setRefreshState((prevState) => !prevState);
       setPage(1);
     } else if (e.target.value === "descScore") {
-      dispatch(orderScoreDesc());
+      dispatch(orderScoreDesc(refreshState));
       setRefreshState((prevState) => !prevState);
       setPage(1);
     }

@@ -88,7 +88,6 @@ export default function NewRecipe() {
         ...input,
         diets: [...input.diets, e.target.value],
       });
-    e.target.value = "default";
   };
 
   const handleChangeSubmit = (e) => {
@@ -200,7 +199,7 @@ export default function NewRecipe() {
                     <option default></option>
                     {diets?.map((d) => {
                       return (
-                        <option key={d.id} name="diets" value={d.name}>
+                        <option key={d.name} name="diets" value={d.name}>
                           {d.name}
                         </option>
                       );
@@ -209,7 +208,7 @@ export default function NewRecipe() {
                   <div className={style.dietas}>
                     <div>
                       {input.diets.map((e) => (
-                        <div>
+                        <div key={e.toString()}>
                           <button value={e} onClick={(e) => handleDelete(e)}>
                             x
                           </button>

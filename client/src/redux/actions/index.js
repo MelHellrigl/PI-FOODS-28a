@@ -12,6 +12,8 @@ export const ORDER_SCORE_DESC = "ORDER_SCORE_DESC";
 export const FILTER_DIETS = "FILTER_DIETS";
 export const CLEAR = "CLEAR";
 export const LOADING = "LOADING";
+// export const DELETE = "DELETE";
+// export const EDIT = "EDIT";
 
 export function getRecipes() {
   return async function (dispatch) {
@@ -81,3 +83,20 @@ export function loadingAction(payload) {
     dispatch({ type: LOADING, payload });
   };
 }
+
+// export function deleteRecipe(id) {
+//   return async function (dispatch) {
+//     const deleteId = await axios.delete(`http://localhost:3001/recipesDlt?idDelete=${id}`);
+//     return dispatch({
+//       type: DELETE,
+//       payload: deleteId.data,
+//     });
+//   };
+// }
+
+// export function editRecipes(id) {
+//   return async function (dispatch) {
+//     const recipeID = await axios.put(`http://localhost:3001/recipesEdt/${id}`);
+//     return dispatch({ type: EDIT, payload: recipeID.data });
+//   };
+// }

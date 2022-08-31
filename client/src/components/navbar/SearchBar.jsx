@@ -13,7 +13,7 @@ export default function SearchBar({ paginado }) {
     setTitle(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = () => {
     dispatch(getRecipesName(title));
     paginado(1);
     setTitle("");

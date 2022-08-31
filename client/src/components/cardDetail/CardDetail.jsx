@@ -1,6 +1,6 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
-import { getRecipesId, clearDetail } from "../../redux/actions";
+import { useParams, Link /*useHistory, editRecipes*/ } from "react-router-dom";
+import { getRecipesId, clearDetail /*deleteRecipe*/ } from "../../redux/actions";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import imgNotAvailable from "../../Image/Image_not_available.png";
@@ -9,6 +9,7 @@ import Logo from "../../Image/natural-1281596-removebg-preview (1).png";
 
 export default function CardDetail() {
   const dispatch = useDispatch();
+  // const history = useHistory();
   const recipeDetail = useSelector((state) => state.recipeDetail);
   const { id } = useParams(); //esto permite ingresar a los parámetros de la ruta actual
 
@@ -20,8 +21,20 @@ export default function CardDetail() {
     };
   }, [dispatch, id]);
 
+  // const handleDelete = (e) => {
+  //   e.preventDefault();
+  //   dispatch(deleteRecipe(id));
+  //   alert("Receta eliminada");
+  //   history.push("/recipes");
+  // };
+
+  // const handleEdit = (e) => {
+  //   e.preventDefault();
+  //   dispatch(editRecipes(id));
+  // };
+
   return (
-    <div key={id} className={style.bgImg}>
+    <div className={style.bgImg}>
       <div className={style.bg}>
         <div className={style.nav}>
           <div>
@@ -31,6 +44,17 @@ export default function CardDetail() {
             <Link to="/recipes">
               <button>Back</button>
             </Link>
+            {/* {id.includes("-") && (
+              <button type="button" onClick={(e) => handleDelete(e)}>
+                Delete
+              </button>
+            )} */}
+
+            {/* {id.includes("-") && (
+              <button type="button" onClick={(e) => handleEdit(e)}>
+                Edit
+              </button>
+            )} */}
           </div>
         </div>
         <div className={style.position}>
@@ -46,7 +70,7 @@ export default function CardDetail() {
                   <div>
                     {recipeDetail.diets.map((d) => {
                       if (typeof recipeDetail.diets[0] === "object") {
-                        return <h4 key={d.id}>{d.name}</h4>;
+                        return <h4 key={d.name}>{d.name}</h4>;
                       }
                       return <h4 key={d}>{d}</h4>;
                     })}
