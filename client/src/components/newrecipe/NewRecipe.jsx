@@ -129,7 +129,7 @@ export default function NewRecipe() {
             </Link>
           </div>
         </div>
-        <div className={style.position}>
+        <div className={style.position} z-index="60">
           <div className={style.bgDetail}>
             <h1>New Recipe</h1>
             <div className={style.contenido}>

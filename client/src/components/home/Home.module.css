@@ -6,12 +6,14 @@
   height: 185px;
   width: 100%;
   box-shadow: 3px 3px 20px 3px rgba(0, 0, 0, 0.45);
+  z-index: 100;
 }
 
 /************* Fondo de color con transparencia ***************/
 .bg {
   background: rgba(207, 186, 174, 0.62);
   width: 100%;
+  z-index: 90;
 }
 
 /************* NavBar ***************/
@@ -22,13 +24,14 @@
   height: 50px;
   width: 100%;
   top: 0px;
-  /* position: fixed; */
+  position: fixed;
+  z-index: 50;
 }
 
 /************* Filtro & Paginado ***************/
 .filtroPaginado {
   width: 100%;
-  margin-top: 35px;
+  padding-top: 80px;
 }
 
 /************* Ordenamiento & Filtro ***************/

@@ -34,7 +34,7 @@ export default function CardDetail() {
             </Link>
           </div>
         </div>
-        <div className={style.position}>
+        <div className={style.position} z-index="60">
           <div className={style.bgDetail}>
             <h1>{recipeDetail.title}</h1>
             <div className={style.contenido}>

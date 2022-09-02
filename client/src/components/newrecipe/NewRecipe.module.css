@@ -6,6 +6,7 @@
   width: 100%;
   height: 100%;
   /* overflow: scroll; */
+  z-index: 100;
 }
 
 .bg {
@@ -15,6 +16,7 @@
   height: 100%;
   background: rgba(207, 186, 174, 0.62);
   overflow: scroll;
+  z-index: 90;
 }
 
 /************* NavBar ***************/
@@ -25,6 +27,8 @@
   height: 50px;
   width: 100%;
   top: 0px;
+  position: fixed;
+  z-index: 50;
 }
 
 .nav div {
@@ -87,7 +91,7 @@
 
 /************* Fondo Detalle ***************/
 .bgDetail {
-  width: 600px;
+  width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -135,12 +139,13 @@
 .contenido input {
   font-family: "DM Sans", sans-serif;
   display: flex;
-  width: 250px;
+  width: 60%;
   justify-content: flex-start;
   font-weight: lighter;
   border-radius: 15px;
   border: 1px solid #8f8e8e;
   height: 25px;
+  margin: 0px 20px;
 }
 
 .contenido span {
@@ -155,29 +160,32 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .contenido textarea {
   font-family: "DM Sans", sans-serif;
   display: flex;
-  width: 250px;
+  width: 60%;
   justify-content: flex-start;
   font-weight: lighter;
   border-radius: 15px;
   border: 1px solid #8f8e8e;
   height: 60px;
+  margin: 0px 20px;
 }
 
 .contenido select {
   border-radius: 15px;
   margin: 2px;
   height: 35px;
-  width: 160px;
+  width: 60%;
   padding: 5px;
   text-align: left;
   border: 1px solid #8f8e8e;
   font-weight: bold;
   font-family: "DM Sans", sans-serif;
+  margin: 0px 20px;
 }
 
 .contenido select:hover {
@@ -192,7 +200,7 @@
 .btnSubmit button {
   border-radius: 15px;
   height: 40px;
-  width: 300px;
+  width: 40%;
   padding: 5px;
   text-align: center;
   border: 1px solid #ffffff;
@@ -201,6 +209,7 @@
   /* background: rgba(178, 165, 157, 0.69); */
   font-size: 20px;
   font-weight: bold;
+  margin: 0px 10px;
 }
 .btnSubmit button:hover {
   cursor: pointer;
@@ -218,10 +227,12 @@
 
 .dietas div {
   display: flex;
-  width: 300px;
+  /* width: 300px; */
+  width: 60%;
   height: 100%;
   flex-direction: row;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  justify-content: flex-start;
   flex-wrap: wrap;
   align-items: center;
   align-content: space-between;
@@ -261,4 +272,5 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%;
 }

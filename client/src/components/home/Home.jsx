@@ -79,7 +79,7 @@ export default function Home() {
         <div className={style.navBar}>
           <Navbar paginado={paginado} />
         </div>
-        <div>
+        <div z-index="60">
           <div className={style.filtroPaginado}>
             <div className={style.sortFilter}>
               <select onChange={handleSortTitle} defaultValue="default">

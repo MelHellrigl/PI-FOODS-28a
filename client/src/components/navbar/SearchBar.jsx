@@ -14,13 +14,17 @@ export default function SearchBar({ paginado }) {
   };
 
   const handleSubmit = () => {
-    dispatch(getRecipesName(title));
-    paginado(1);
-    setTitle("");
-    dispatch(loadingAction(true));
-    setTimeout(() => {
-      dispatch(loadingAction(false));
-    }, 3000);
+    if (title) {
+      dispatch(getRecipesName(title));
+      paginado(1);
+      setTitle("");
+      dispatch(loadingAction(true));
+      setTimeout(() => {
+        dispatch(loadingAction(false));
+      }, 3000);
+    } else {
+      alert("Debes escribir algo...");
+    }
   };
 
   return (
