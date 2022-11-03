@@ -17,7 +17,7 @@ export const LOADING = "LOADING";
 export function getRecipes() {
   return (dispatch) => {
     axios
-      .get("http://localhost:3001/recipes")
+      .get("/recipes")
       .then((response) => {
         dispatch({
           type: GET_RECIPES,
@@ -33,7 +33,7 @@ export function getRecipes() {
 export function getDiets() {
   return (dispatch) => {
     axios
-      .get("http://localhost:3001/diets")
+      .get("/diets")
       .then((response) => {
         dispatch({ type: GET_DIETS, payload: response.data });
       })
@@ -46,7 +46,7 @@ export function getDiets() {
 export function createRecipe(value) {
   return (dispatch) => {
     axios
-      .post("http://localhost:3001/recipes", value)
+      .post("/recipes", value)
       .then((response) => {
         dispatch({ type: CREATE_RECIPE, payload: response.value });
       })
@@ -60,7 +60,7 @@ export function createRecipe(value) {
 
 export function getRecipesId(id) {
   return async function (dispatch) {
-    const recipeID = await axios(`http://localhost:3001/recipes/${id}`);
+    const recipeID = await axios(`/recipes/${id}`);
     return dispatch({ type: GET_RECIPES_ID, payload: recipeID.data });
   };
 }
@@ -68,7 +68,7 @@ export function getRecipesId(id) {
 export function getRecipesName(name) {
   return async function (dispatch) {
     try {
-      const recipeName = await axios(`http://localhost:3001/recipes?name=${name}`);
+      const recipeName = await axios(`/recipes?name=${name}`);
       return dispatch({ type: GET_RECIPES_NAME, payload: recipeName.data });
     } catch (error) {
       alert("The Recipe not exist, but you can Create.");
