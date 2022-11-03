@@ -15,6 +15,7 @@ import Navbar from "../navbar/Navbar";
 import Paginado from "../paginado/Paginado";
 import style from "./Home.module.css";
 import Gif from "../../Image/1484.gif";
+import Refreash from "../../Image/redo__1_-removebg-preview.png";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -71,6 +72,16 @@ export default function Home() {
     setPage(1);
   };
 
+  function handleRecipes(e) {
+    e.preventDefault();
+    dispatch(getRecipes());
+    paginado(1);
+    dispatch(loadingAction(true));
+    setTimeout(() => {
+      dispatch(loadingAction(false));
+    }, 3000);
+  }
+
   /* ---------------- RENDER ------------------ */
 
   return (
@@ -82,6 +93,9 @@ export default function Home() {
         <div z-index="60">
           <div className={style.filtroPaginado}>
             <div className={style.sortFilter}>
+              <div className={style.refreash}>
+                <img src={Refreash} alt="Refreash" onClick={(e) => handleRecipes(e)} />
+              </div>
               <select onChange={handleSortTitle} defaultValue="default">
                 <option default>Sort Title</option>
                 <option value="orderAZ">Recipes A-Z</option>

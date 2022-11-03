@@ -5,6 +5,7 @@ import Landing from "./components/landing/Landing";
 import Home from "./components/home/Home";
 import CardDetail from "./components/cardDetail/CardDetail";
 import NewRecipe from "./components/newrecipe/NewRecipe";
+import About from "./components/about/About";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route exact path="/recipes" component={Home} />
           <Route exact path="/recipes/:id" component={CardDetail} />
           <Route path="/createRecipe" component={NewRecipe} />
+          <Route exact path="/about" component={About} />
         </Switch>
       </React.Fragment>
     </BrowserRouter>
