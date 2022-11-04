@@ -34,21 +34,26 @@ export default function About() {
               </h3>
               <h2>Contact me</h2>
               <div className={style.contact}>
-                <Link className={style.circle} to="https://github.com/MelHellrigl">
+                <a className={style.circle} target="_black" href={"https://github.com/MelHellrigl"}>
                   <img src={github} alt="Logo" />
                   <h4>Github</h4>
-                </Link>
-                <Link
+                </a>
+                <a
                   className={style.circle}
-                  to="https://www.linkedin.com/in/melissa-hellrigl-908441134/"
+                  target="_black"
+                  href={"https://www.linkedin.com/in/melissa-hellrigl-908441134/"}
                 >
                   <img src={linkedin} alt="Logo" />
                   <h4>LinkedIn</h4>
-                </Link>
-                <Link className={style.circle} to="mailto:hellriglandreamelissa@gmail.com">
+                </a>
+                <a
+                  className={style.circle}
+                  target="_black"
+                  href={"mailto:hellriglandreamelissa@gmail.com"}
+                >
                   <img src={email} alt="Logo" />
                   <h4>hellriglandreamelissa@gmail.com</h4>
-                </Link>
+                </a>
               </div>
             </div>
           </div>
