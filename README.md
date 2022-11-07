@@ -37,3 +37,43 @@
 - Express
 - Sequelize
 - PostgreSQL
+
+## Vistas del Proyecto
+
+<br>
+
+<p align="center">
+  <img height="300" src="./client/src/Image/landingPI.png" />
+</p>
+
+<br>
+
+<p align="center">
+  <img height="300" src="./homePI.png" />
+</p>
+
+<br>
+
+<p align="center">
+  <img height="300" src="./client/src/Image/formularioPI.png" />
+</p>
+
+<br>
+
+<p align="center">
+  <img height="300" src="./client/src/Image/detallePI.png" />
+</p>
+
+<br>
+
+<p align="center">
+  <img height="300" src="./client/src/Image/detalle2PI.png" />
+</p>
+
+<br>
+
+<p align="center">
+  <img height="300" src="./client/src/Image/aboutPI.png" />
+</p>
+
+<br>
